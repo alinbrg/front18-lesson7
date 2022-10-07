@@ -1,0 +1,135 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1300px;
+	width: 100%;
+	margin: auto;
+}
+section {
+	padding: 40px 0;
+}
+.card,
+.card-bg {
+	width: 400px;
+	border-radius: 10px;
+	display: inline-block;
+	margin: 0 20px;
+	vertical-align: middle;
+	position: relative;
+}
+.card img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+.card p,
+.card-bg p {
+	font-size: 24px;
+	text-transform: uppercase;
+	padding: 20px 10px;
+	border-radius: 10px;
+	background-color: rgba(203, 197, 197, 0.5);
+	position: absolute;
+	bottom: 20px;
+	left: 5%;
+	width: 90%;
+}
+
+.card-bg {
+	width: 100%;
+	margin: 0;
+	height: 400px;
+	background-image: url(../images/post-3.jpg);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+
+	transition-property: all;
+	transition-delay: 0.3s;
+	transition-duration: 3s;
+	transition-timing-function: ease;
+}
+.card-bg p {
+	border: 2px solid transparent;
+	/* transition-property: all;
+	transition-delay: 0.3s;
+	transition-duration: 3s;
+	transition-timing-function: ease; */
+
+	transition: all 0.3s ease 3s;
+}
+.card-bg:hover {
+	background-image: url(../images/post-2.jpg);
+	height: 450px;
+}
+.card-bg:hover p {
+	color: darkblue;
+	background-color: white;
+	/* border: 2px solid darkblue; */
+	border-color: darkblue;
+	/* font-size: 30px; */
+}
+.card p:hover {
+	color: red;
+}
+.moon,
+.sun {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+}
+.moon {
+	left: 0;
+	background-color: darkgoldenrod;
+	animation-name: moveRight;
+	animation-delay: 1s;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: 2;
+	animation-direction: alternate;
+}
+
+.sun {
+	background-color: red;
+	right: 0;
+	animation-name: moveLeft;
+	animation-delay: 1s;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes moveLeft {
+	from {
+		right: 0;
+	}
+	to {
+		right: 60%;
+	}
+}
+@keyframes moveRight {
+	0% {
+		left: 0;
+	}
+	30% {
+		left: 30%;
+		top: 50%;
+	}
+	60% {
+		left: 20%;
+		top: 10%;
+		background-color: yellow;
+	}
+	100% {
+		top: 60%;
+		left: 70%;
+	}
+}
